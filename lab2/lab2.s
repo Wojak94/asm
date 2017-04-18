@@ -143,16 +143,16 @@ convert_second_number:
 add_numbers_start:
 	clc				#Clean carry flag
 	pushf				#Push flag register with cleared CF to stack
-	movq $400, %rcx			#Counter of 'octal' buffer bytes
+	movq $50, %rcx			#Counter of 'octal' buffer bytes
 	movq $0, %r15			#Counter for 'octal' offset
 
 add_numbers:
 	popf				#Pop flag register with cleared CF from stack 
-	movb octal(, %r15, 1), %al	#Load 1 byte from each number to regisetrs
-	movb octal2(, %r15, 1), %bl
-	adcb %bl, %al			
+	movq octal(, %r15, 8), %rax	#Load 1 byte from each number to regisetrs
+	movq octal2(, %r15, 8), %rbx
+	adc %rax, %rbx			
 	pushf				#Push flag register with CF after ADC command
-	movb %al, octalsum(, %r15, 1)	#Move summed number to its buffer
+	movq %rbx, octalsum(, %r15, 8)	#Move summed number to its buffer
 	dec %rcx
 	inc %r15
 	cmp $0, %rcx			#If %rcx == 0 then all bytes were added
