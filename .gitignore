@@ -1,5 +1,6 @@
 *.o
 *.txt
+Cpuid/
 lab2/lab2
 lab2ex/
 lab3/lab3
