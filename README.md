@@ -5,7 +5,7 @@ This repository contains programs written in x86_64, GAS syntax Assembler, durin
 Program loads two integer numbers in octal notation from txt files, saves them to memory buffers in little endian format, then adds them together with CF flag and 64 bit register. Result is saved to output txt file in hexadecimal notation.
 
 ## Lab 3
-There are two programs that realize recursive function that computes desired sequence element. First program passing arguments using stack, second use registers.
+There are two programs that realize recursive function that computes desired sequence element. First program passing arguments using stack, second uses registers.
 
 ## Lab 4
 First program loads integer number with scanf function, then passes it to recursive function written in C that computes n-th sequence element. That function returns number in double format, which is printed to terminal using printf function.
